@@ -12,37 +12,45 @@ pragma experimental ABIEncoderV2;
 */
 
 
-contract Actions {
+contract Purchase {
     
     struct Ativo {
         uint256 valor;
         address dono;
         bool vendivel;
+        string nome;
     }
     
-    mapping (string => Ativo) public ativos;
+    mapping (uint256 => Ativo) public ativos;
     
-    string [] private nomeAtivo;
+    uint256 [] qtdAtivos;
+    
+    //string [] private nomeAtivo;
+    uint256 qtdAtivosCount = 0;
     
     function setAtivos(uint256 _valor, bool _vendivel, string memory _nomeAtivo) public {
         
-        nomeAtivo.push(_nomeAtivo);
-        ativos[_nomeAtivo].valor = _valor;
-        ativos[_nomeAtivo].vendivel = _vendivel;
-        ativos[_nomeAtivo].dono = msg.sender;
-    
+        qtdAtivos.push(qtdAtivosCount);
+
+        ativos[qtdAtivosCount].valor = _valor;
+        ativos[qtdAtivosCount].vendivel = _vendivel;
+        ativos[qtdAtivosCount].nome = _nomeAtivo;
+        ativos[qtdAtivosCount].dono = msg.sender;
+        
+        qtdAtivosCount++;
     }
     
-    function getAtivos () external view returns (string[] memory nomesAtivo) {
-        return nomeAtivo;
+    function getAtivos () external view returns (uint256[] memory idsAtivo) {
+        return qtdAtivos;
     }
     
     
-    function comprar (string memory _nomeAtivo) public payable {
-        require (ativos[_nomeAtivo].vendivel == true, "O ativo nao pode ser vendido ou nao possue nome valido.");
-        require (msg.value >= ativos[_nomeAtivo].valor, "O valor precisa ser maior que o preco do ativo.");
-        ativos[_nomeAtivo].valor = msg.value;
-        ativos[_nomeAtivo].dono = msg.sender;
+    function comprar (uint256 _idAtivo) public payable {
+        require (ativos[_idAtivo].vendivel == true, "O ativo nao pode ser vendido ou nao possue id valido.");
+        require (msg.value >= ativos[_idAtivo].valor, "O valor precisa ser maior que o preco do ativo.");
+        ativos[_idAtivo].valor = msg.value;
+        ativos[_idAtivo].dono = msg.sender;
+        
     }
 
 }
