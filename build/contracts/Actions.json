@@ -1,0 +1,2969 @@
+{
+  "contractName": "Actions",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "ativos",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "valor",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "dono",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "vendivel",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_valor",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_vendivel",
+          "type": "bool"
+        },
+        {
+          "internalType": "string",
+          "name": "_nomeAtivo",
+          "type": "string"
+        }
+      ],
+      "name": "setAtivos",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAtivos",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "nomesAtivo",
+          "type": "string[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_nomeAtivo",
+          "type": "string"
+        }
+      ],
+      "name": "comprar",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"ativos\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"valor\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"dono\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"vendivel\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_nomeAtivo\",\"type\":\"string\"}],\"name\":\"comprar\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getAtivos\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"nomesAtivo\",\"type\":\"string[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_valor\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_vendivel\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"_nomeAtivo\",\"type\":\"string\"}],\"name\":\"setAtivos\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/IFB/IF investimentos/contracts/Actions.sol\":\"Actions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/IFB/IF investimentos/contracts/Actions.sol\":{\"keccak256\":\"0x97ba60df32d13e738f9b1bb92fbe03386d54683660a497ecbecf2bcf7aa41497\",\"urls\":[\"bzz-raw://e40f4fd28d958e0c4a1a76537acac016cc04dad59b8d7c54d6b793323dd15a4b\",\"dweb:/ipfs/QmNTVhMEGWja2gKojmwaveMmDUz2DfZqAqF8F6pkzUwwti\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506108c2806100206000396000f3fe60806040526004361061003f5760003560e01c80632cc5def6146100445780633376737f1461006f578063c22d353c14610084578063f7a1068f146100a4575b600080fd5b34801561005057600080fd5b506100596100d3565b604051610066919061073d565b60405180910390f35b61008261007d3660046104d6565b6101ac565b005b34801561009057600080fd5b5061008261009f366004610513565b6102ac565b3480156100b057600080fd5b506100c46100bf3660046104d6565b610395565b6040516100669392919061076e565b60606001805480602002602001604051908101604052809291908181526020016000905b828210156101a25760008481526020908190208301805460408051601f600260001961010060018716150201909416939093049283018590048502810185019091528181529283018282801561018e5780601f106101635761010080835404028352916020019161018e565b820191906000526020600020905b81548152906001019060200180831161017157829003601f168201915b5050505050815260200190600101906100f7565b5050505090505b90565b6000816040516101bc9190610731565b90815260405190819003602001902060019081015460ff600160a01b909104161515146102045760405162461bcd60e51b81526004016101fb9061075e565b60405180910390fd5b6000816040516102149190610731565b908152604051908190036020019020543410156102435760405162461bcd60e51b81526004016101fb9061074e565b346000826040516102549190610731565b908152604051908190036020018120919091553390600090610277908490610731565b90815260405190819003602001902060010180546001600160a01b03929092166001600160a01b031990921691909117905550565b6001805480820180835560009290925282516102ef917fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6019060208501906103ce565b5050826000826040516103029190610731565b908152604051908190036020018120919091558290600090610325908490610731565b908152602001604051809103902060010160146101000a81548160ff0219169083151502179055503360008260405161035e9190610731565b90815260405190819003602001902060010180546001600160a01b03929092166001600160a01b0319909216919091179055505050565b8051602081830181018051600082529282019190930120915280546001909101546001600160a01b03811690600160a01b900460ff1683565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040f57805160ff191683800117855561043c565b8280016001018555821561043c579182015b8281111561043c578251825591602001919060010190610421565b5061044892915061044c565b5090565b6101a991905b808211156104485760008155600101610452565b80356104718161085f565b92915050565b600082601f83011261048857600080fd5b813561049b610496826107bd565b610796565b915080825260208301602083018583830111156104b757600080fd5b6104c2838284610819565b50505092915050565b803561047181610876565b6000602082840312156104e857600080fd5b813567ffffffffffffffff8111156104ff57600080fd5b61050b84828501610477565b949350505050565b60008060006060848603121561052857600080fd5b600061053486866104cb565b935050602061054586828701610466565b925050604084013567ffffffffffffffff81111561056257600080fd5b61056e86828701610477565b9150509250925092565b60006105848383610640565b9392505050565b610594816107fd565b82525050565b60006105a5826107eb565b6105af81856107ef565b9350836020820285016105c1856107e5565b8060005b858110156105fb57848403895281516105de8582610578565b94506105e9836107e5565b60209a909a01999250506001016105c5565b5091979650505050505050565b61059481610808565b600061061c826107eb565b61062681856107f8565b9350610636818560208601610825565b9290920192915050565b600061064b826107eb565b61065581856107ef565b9350610665818560208601610825565b61066e81610855565b9093019392505050565b6000610685602f836107ef565b7f4f2076616c6f72207072656369736120736572206d61696f7220717565206f2081526e383932b1b79032379030ba34bb379760891b602082015260400192915050565b60006106d66037836107ef565b7f4f20617469766f206e616f20706f6465207365722076656e6469646f206f752081527f6e616f20706f73737565206e6f6d652076616c69646f2e000000000000000000602082015260400192915050565b610594816101a9565b60006105848284610611565b60208082528101610584818461059a565b6020808252810161047181610678565b60208082528101610471816106c9565b6060810161077c8286610728565b610789602083018561058b565b61050b6040830184610608565b60405181810167ffffffffffffffff811182821017156107b557600080fd5b604052919050565b600067ffffffffffffffff8211156107d457600080fd5b506020601f91909101601f19160190565b60200190565b5190565b90815260200190565b919050565b60006104718261080d565b151590565b6001600160a01b031690565b82818337506000910152565b60005b83811015610840578181015183820152602001610828565b8381111561084f576000848401525b50505050565b601f01601f191690565b61086881610808565b811461087357600080fd5b50565b610868816101a956fea365627a7a7231582032c8c1a211899a8f1fee250c819ca1df317bfaa038862e2c1690b680b383f2646c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x60806040526004361061003f5760003560e01c80632cc5def6146100445780633376737f1461006f578063c22d353c14610084578063f7a1068f146100a4575b600080fd5b34801561005057600080fd5b506100596100d3565b604051610066919061073d565b60405180910390f35b61008261007d3660046104d6565b6101ac565b005b34801561009057600080fd5b5061008261009f366004610513565b6102ac565b3480156100b057600080fd5b506100c46100bf3660046104d6565b610395565b6040516100669392919061076e565b60606001805480602002602001604051908101604052809291908181526020016000905b828210156101a25760008481526020908190208301805460408051601f600260001961010060018716150201909416939093049283018590048502810185019091528181529283018282801561018e5780601f106101635761010080835404028352916020019161018e565b820191906000526020600020905b81548152906001019060200180831161017157829003601f168201915b5050505050815260200190600101906100f7565b5050505090505b90565b6000816040516101bc9190610731565b90815260405190819003602001902060019081015460ff600160a01b909104161515146102045760405162461bcd60e51b81526004016101fb9061075e565b60405180910390fd5b6000816040516102149190610731565b908152604051908190036020019020543410156102435760405162461bcd60e51b81526004016101fb9061074e565b346000826040516102549190610731565b908152604051908190036020018120919091553390600090610277908490610731565b90815260405190819003602001902060010180546001600160a01b03929092166001600160a01b031990921691909117905550565b6001805480820180835560009290925282516102ef917fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6019060208501906103ce565b5050826000826040516103029190610731565b908152604051908190036020018120919091558290600090610325908490610731565b908152602001604051809103902060010160146101000a81548160ff0219169083151502179055503360008260405161035e9190610731565b90815260405190819003602001902060010180546001600160a01b03929092166001600160a01b0319909216919091179055505050565b8051602081830181018051600082529282019190930120915280546001909101546001600160a01b03811690600160a01b900460ff1683565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040f57805160ff191683800117855561043c565b8280016001018555821561043c579182015b8281111561043c578251825591602001919060010190610421565b5061044892915061044c565b5090565b6101a991905b808211156104485760008155600101610452565b80356104718161085f565b92915050565b600082601f83011261048857600080fd5b813561049b610496826107bd565b610796565b915080825260208301602083018583830111156104b757600080fd5b6104c2838284610819565b50505092915050565b803561047181610876565b6000602082840312156104e857600080fd5b813567ffffffffffffffff8111156104ff57600080fd5b61050b84828501610477565b949350505050565b60008060006060848603121561052857600080fd5b600061053486866104cb565b935050602061054586828701610466565b925050604084013567ffffffffffffffff81111561056257600080fd5b61056e86828701610477565b9150509250925092565b60006105848383610640565b9392505050565b610594816107fd565b82525050565b60006105a5826107eb565b6105af81856107ef565b9350836020820285016105c1856107e5565b8060005b858110156105fb57848403895281516105de8582610578565b94506105e9836107e5565b60209a909a01999250506001016105c5565b5091979650505050505050565b61059481610808565b600061061c826107eb565b61062681856107f8565b9350610636818560208601610825565b9290920192915050565b600061064b826107eb565b61065581856107ef565b9350610665818560208601610825565b61066e81610855565b9093019392505050565b6000610685602f836107ef565b7f4f2076616c6f72207072656369736120736572206d61696f7220717565206f2081526e383932b1b79032379030ba34bb379760891b602082015260400192915050565b60006106d66037836107ef565b7f4f20617469766f206e616f20706f6465207365722076656e6469646f206f752081527f6e616f20706f73737565206e6f6d652076616c69646f2e000000000000000000602082015260400192915050565b610594816101a9565b60006105848284610611565b60208082528101610584818461059a565b6020808252810161047181610678565b60208082528101610471816106c9565b6060810161077c8286610728565b610789602083018561058b565b61050b6040830184610608565b60405181810167ffffffffffffffff811182821017156107b557600080fd5b604052919050565b600067ffffffffffffffff8211156107d457600080fd5b506020601f91909101601f19160190565b60200190565b5190565b90815260200190565b919050565b60006104718261080d565b151590565b6001600160a01b031690565b82818337506000910152565b60005b83811015610840578181015183820152602001610828565b8381111561084f576000848401525b50505050565b601f01601f191690565b61086881610808565b811461087357600080fd5b50565b610868816101a956fea365627a7a7231582032c8c1a211899a8f1fee250c819ca1df317bfaa038862e2c1690b680b383f2646c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "322:1040:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;322:1040:0;;;;;;;",
+  "deployedSourceMap": "322:1040:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;846:108;;8:9:-1;5:2;;;30:1;27;20:12;5:2;846:108:0;;;:::i;:::-;;;;;;;;;;;;;;;;972:385;;;;;;;;;:::i;:::-;;548:286;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;548:286:0;;;;;;;;:::i;456:39::-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;456:39:0;;;;;;;;:::i;:::-;;;;;;;;;;846:108;891:26;937:9;930:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;930:16:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;846:108;;:::o;972:385::-;1051:6;1058:10;1051:18;;;;;;;;;;;;;;;;;;;;;:27;;;;;;-1:-1:-1;;;1051:27:0;;;;:35;;;1042:104;;;;-1:-1:-1;;;1042:104:0;;;;;;;;;;;;;;;;;1179:6;1186:10;1179:18;;;;;;;;;;;;;;;;;;;;;:24;1166:9;:37;;1157:98;;;;-1:-1:-1;;;1157:98:0;;;;;;;;;1293:9;1266:6;1273:10;1266:18;;;;;;;;;;;;;;;;;;;;;:36;;;;1339:10;;1266:24;;1313:18;;1320:10;;1313:18;;;;;;;;;;;;;;;;:23;;:36;;-1:-1:-1;;;;;1313:36:0;;;;-1:-1:-1;;;;;;1313:36:0;;;;;;;;;-1:-1:-1;972:385:0:o;548:286::-;653:9;27:10:-1;;23:18;;;45:23;;;-1:-1;653:26:0;;;;;;;;;;;;;;;;:::i;:::-;;;717:6;690;697:10;690:18;;;;;;;;;;;;;;;;;;;;;:33;;;;764:9;;690:24;;734:18;;741:10;;734:18;;;;;;;;;;;;;;;:27;;;:39;;;;;;;;;;;;;;;;;;810:10;784:6;791:10;784:18;;;;;;;;;;;;;;;;;;;;;:23;;:36;;-1:-1:-1;;;;;784:36:0;;;;-1:-1:-1;;;;;;784:36:0;;;;;;;;;-1:-1:-1;;;548:286:0:o;456:39::-;22:14:-1;;169:4;143:32;;;;;198:20;;456:39:0;224:31:-1;;156:18;;;283;;;;273:49;328:32;;456:39:0;;;;;;;-1:-1:-1;;;;;456:39:0;;;-1:-1:-1;;;456:39:0;;;;;:::o;322:1040::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;322:1040:0;;;-1:-1:-1;322:1040:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;5:124:-1;69:20;;94:30;69:20;94:30;;;54:75;;;;;137:434;;235:3;228:4;220:6;216:17;212:27;202:2;;253:1;250;243:12;202:2;290:6;277:20;312:61;327:45;365:6;327:45;;;312:61;;;303:70;;393:6;386:5;379:21;429:4;421:6;417:17;462:4;455:5;451:16;497:3;488:6;483:3;479:16;476:25;473:2;;;514:1;511;504:12;473:2;524:41;558:6;553:3;548;524:41;;;195:376;;;;;;;;1030:130;1097:20;;1122:33;1097:20;1122:33;;1167:339;;1277:2;1265:9;1256:7;1252:23;1248:32;1245:2;;;1293:1;1290;1283:12;1245:2;1328:31;;1379:18;1368:30;;1365:2;;;1411:1;1408;1401:12;1365:2;1431:59;1482:7;1473:6;1462:9;1458:22;1431:59;;;1421:69;1239:267;-1:-1;;;;1239:267;1867:591;;;;2012:2;2000:9;1991:7;1987:23;1983:32;1980:2;;;2028:1;2025;2018:12;1980:2;2063:1;2080:53;2125:7;2105:9;2080:53;;;2070:63;;2042:97;2170:2;2188:50;2230:7;2221:6;2210:9;2206:22;2188:50;;;2178:60;;2149:95;2303:2;2292:9;2288:18;2275:32;2327:18;2319:6;2316:30;2313:2;;;2359:1;2356;2349:12;2313:2;2379:63;2434:7;2425:6;2414:9;2410:22;2379:63;;;2369:73;;2254:194;1974:484;;;;;;2466:181;;2579:62;2637:3;2629:6;2579:62;;;2565:76;2558:89;-1:-1;;;2558:89;2655:113;2738:24;2756:5;2738:24;;;2733:3;2726:37;2720:48;;;2804:896;;2961:60;3015:5;2961:60;;;3034:92;3119:6;3114:3;3034:92;;;3027:99;;3149:3;3191:4;3183:6;3179:17;3174:3;3170:27;3218:62;3274:5;3218:62;;;3300:7;3328:1;3313:348;3338:6;3335:1;3332:13;3313:348;;;3400:9;3394:4;3390:20;3385:3;3378:33;3445:6;3439:13;3467:76;3538:4;3523:13;3467:76;;;3459:84;;3560:66;3619:6;3560:66;;;3649:4;3640:14;;;;;3550:76;-1:-1;;3360:1;3353:9;3313:348;;;-1:-1;3674:4;;2940:760;-1:-1;;;;;;;2940:760;3708:104;3785:21;3800:5;3785:21;;3819:360;;3949:39;3982:5;3949:39;;;4000:89;4082:6;4077:3;4000:89;;;3993:96;;4094:52;4139:6;4134:3;4127:4;4120:5;4116:16;4094:52;;;4158:16;;;;;3929:250;-1:-1;;3929:250;4186:319;;4284:35;4313:5;4284:35;;;4331:61;4385:6;4380:3;4331:61;;;4324:68;;4397:52;4442:6;4437:3;4430:4;4423:5;4419:16;4397:52;;;4470:29;4492:6;4470:29;;;4461:39;;;;4264:241;-1:-1;;;4264:241;4513:384;;4673:67;4737:2;4732:3;4673:67;;;4773:34;4753:55;;-1:-1;;;4837:2;4828:12;;4821:39;4888:2;4879:12;;4659:238;-1:-1;;4659:238;4906:392;;5066:67;5130:2;5125:3;5066:67;;;5166:34;5146:55;;5235:25;5230:2;5221:12;;5214:47;5289:2;5280:12;;5052:246;-1:-1;;5052:246;5306:113;5389:24;5407:5;5389:24;;5426:266;;5572:95;5663:3;5654:6;5572:95;;5699:385;5879:2;5893:47;;;5864:18;;5954:120;5864:18;6060:6;5954:120;;6091:407;6282:2;6296:47;;;6267:18;;6357:131;6267:18;6357:131;;6505:407;6696:2;6710:47;;;6681:18;;6771:131;6681:18;6771:131;;6919:423;7087:2;7072:18;;7101:71;7076:9;7145:6;7101:71;;;7183:72;7251:2;7240:9;7236:18;7227:6;7183:72;;;7266:66;7328:2;7317:9;7313:18;7304:6;7266:66;;7349:256;7411:2;7405:9;7437:17;;;7512:18;7497:34;;7533:22;;;7494:62;7491:2;;;7569:1;7566;7559:12;7491:2;7585;7578:22;7389:216;;-1:-1;7389:216;7612:318;;7752:18;7744:6;7741:30;7738:2;;;7784:1;7781;7774:12;7738:2;-1:-1;7915:4;7851;7828:17;;;;-1:-1;;7824:33;7905:15;;7675:255;8266:157;8396:4;8387:14;;8344:79;8430:143;8539:12;;8510:63;8956:184;9080:19;;;9129:4;9120:14;;9073:67;9483:145;9619:3;9597:31;-1:-1;9597:31;9636:91;;9698:24;9716:5;9698:24;;9734:85;9800:13;9793:21;;9776:43;9826:121;-1:-1;;;;;9888:54;;9871:76;10034:145;10115:6;10110:3;10105;10092:30;-1:-1;10171:1;10153:16;;10146:27;10085:94;10188:268;10253:1;10260:101;10274:6;10271:1;10268:13;10260:101;;;10341:11;;;10335:18;10322:11;;;10315:39;10296:2;10289:10;10260:101;;;10376:6;10373:1;10370:13;10367:2;;;10441:1;10432:6;10427:3;10423:16;10416:27;10367:2;10237:219;;;;;10464:97;10552:2;10532:14;-1:-1;;10528:28;;10512:49;10569:111;10635:21;10650:5;10635:21;;;10628:5;10625:32;10615:2;;10671:1;10668;10661:12;10615:2;10609:71;;10687:117;10756:24;10774:5;10756:24;",
+  "source": "pragma experimental ABIEncoderV2;\r\n\r\n/*\t\t\r\n*\t\t\r\n*\t\tImplementação de contrato simples:\r\n*\t\tPara funcionamento deve-se primeiro setar o contrato na \r\n*\t\tblockchain e depois para realizar a compra, seguir as regras \r\n*\t\te pronto, ele mudará de dono e valor, se o valor da compra\r\n*\t\tfor maior que o inicial\r\n*\r\n*\r\n*/\r\n\r\n\r\ncontract Actions {\r\n    \r\n    struct Ativo {\r\n        uint256 valor;\r\n        address dono;\r\n        bool vendivel;\r\n    }\r\n    \r\n    mapping (string => Ativo) public ativos;\r\n    \r\n    string [] private nomeAtivo;\r\n    \r\n    function setAtivos(uint256 _valor, bool _vendivel, string memory _nomeAtivo) public {\r\n        \r\n        nomeAtivo.push(_nomeAtivo);\r\n        ativos[_nomeAtivo].valor = _valor;\r\n        ativos[_nomeAtivo].vendivel = _vendivel;\r\n        ativos[_nomeAtivo].dono = msg.sender;\r\n    \r\n    }\r\n    \r\n    function getAtivos () external view returns (string[] memory nomesAtivo) {\r\n        return nomeAtivo;\r\n    }\r\n    \r\n    \r\n    function comprar (string memory _nomeAtivo) public payable {\r\n        require (ativos[_nomeAtivo].vendivel == true, \"O ativo nao pode ser vendido ou nao possue nome valido.\");\r\n        require (msg.value >= ativos[_nomeAtivo].valor, \"O valor precisa ser maior que o preco do ativo.\");\r\n        ativos[_nomeAtivo].valor = msg.value;\r\n        ativos[_nomeAtivo].dono = msg.sender;\r\n    }\r\n\r\n}",
+  "sourcePath": "D:/IFB/IF investimentos/contracts/Actions.sol",
+  "ast": {
+    "absolutePath": "/D/IFB/IF investimentos/contracts/Actions.sol",
+    "exportedSymbols": {
+      "Actions": [
+        106
+      ]
+    },
+    "id": 107,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:33:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 106,
+        "linearizedBaseContracts": [
+          106
+        ],
+        "name": "Actions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Actions.Ativo",
+            "id": 8,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "valor",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "376:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "376:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "dono",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "400:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "400:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "vendivel",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "423:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "423:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Ativo",
+            "nodeType": "StructDefinition",
+            "scope": 106,
+            "src": "352:92:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 12,
+            "name": "ativos",
+            "nodeType": "VariableDeclaration",
+            "scope": 106,
+            "src": "456:39:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+              "typeString": "mapping(string => struct Actions.Ativo)"
+            },
+            "typeName": {
+              "id": 11,
+              "keyType": {
+                "id": 9,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "465:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "456:25:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+                "typeString": "mapping(string => struct Actions.Ativo)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 10,
+                "name": "Ativo",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 8,
+                "src": "475:5:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Ativo_$8_storage_ptr",
+                  "typeString": "struct Actions.Ativo"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15,
+            "name": "nomeAtivo",
+            "nodeType": "VariableDeclaration",
+            "scope": 106,
+            "src": "508:27:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+              "typeString": "string[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 13,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "508:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "id": 14,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "508:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                "typeString": "string[]"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 52,
+              "nodeType": "Block",
+              "src": "632:202:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 27,
+                        "name": "_nomeAtivo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 21,
+                        "src": "668:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 24,
+                        "name": "nomeAtivo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "653:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 26,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "653:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_string_storage_$returns$_t_uint256_$",
+                        "typeString": "function (string storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 28,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "653:26:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 29,
+                  "nodeType": "ExpressionStatement",
+                  "src": "653:26:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 30,
+                          "name": "ativos",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12,
+                          "src": "690:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+                            "typeString": "mapping(string memory => struct Actions.Ativo storage ref)"
+                          }
+                        },
+                        "id": 32,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 31,
+                          "name": "_nomeAtivo",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 21,
+                          "src": "697:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "690:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Ativo_$8_storage",
+                          "typeString": "struct Actions.Ativo storage ref"
+                        }
+                      },
+                      "id": 33,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "valor",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3,
+                      "src": "690:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 34,
+                      "name": "_valor",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "717:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "690:33:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "690:33:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 42,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 37,
+                          "name": "ativos",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12,
+                          "src": "734:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+                            "typeString": "mapping(string memory => struct Actions.Ativo storage ref)"
+                          }
+                        },
+                        "id": 39,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 38,
+                          "name": "_nomeAtivo",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 21,
+                          "src": "741:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "734:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Ativo_$8_storage",
+                          "typeString": "struct Actions.Ativo storage ref"
+                        }
+                      },
+                      "id": 40,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "vendivel",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7,
+                      "src": "734:27:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 41,
+                      "name": "_vendivel",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19,
+                      "src": "764:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "734:39:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 43,
+                  "nodeType": "ExpressionStatement",
+                  "src": "734:39:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 50,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 44,
+                          "name": "ativos",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12,
+                          "src": "784:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+                            "typeString": "mapping(string memory => struct Actions.Ativo storage ref)"
+                          }
+                        },
+                        "id": 46,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 45,
+                          "name": "_nomeAtivo",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 21,
+                          "src": "791:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "784:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Ativo_$8_storage",
+                          "typeString": "struct Actions.Ativo storage ref"
+                        }
+                      },
+                      "id": 47,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "dono",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5,
+                      "src": "784:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 48,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 154,
+                        "src": "810:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 49,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "810:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "784:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 51,
+                  "nodeType": "ExpressionStatement",
+                  "src": "784:36:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 53,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setAtivos",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17,
+                  "name": "_valor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "567:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "567:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19,
+                  "name": "_vendivel",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "583:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "583:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "name": "_nomeAtivo",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 53,
+                  "src": "599:24:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "599:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "566:58:0"
+            },
+            "returnParameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "632:0:0"
+            },
+            "scope": 106,
+            "src": "548:286:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 61,
+              "nodeType": "Block",
+              "src": "919:35:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 59,
+                    "name": "nomeAtivo",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 15,
+                    "src": "937:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                      "typeString": "string storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 58,
+                  "id": 60,
+                  "nodeType": "Return",
+                  "src": "930:16:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 62,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAtivos",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 54,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "865:2:0"
+            },
+            "returnParameters": {
+              "id": 58,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 57,
+                  "name": "nomesAtivo",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 62,
+                  "src": "891:26:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 55,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "891:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 56,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "891:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "890:28:0"
+            },
+            "scope": 106,
+            "src": "846:108:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 104,
+              "nodeType": "Block",
+              "src": "1031:326:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 73,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 68,
+                              "name": "ativos",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12,
+                              "src": "1051:6:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+                                "typeString": "mapping(string memory => struct Actions.Ativo storage ref)"
+                              }
+                            },
+                            "id": 70,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 69,
+                              "name": "_nomeAtivo",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 64,
+                              "src": "1058:10:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_string_memory_ptr",
+                                "typeString": "string memory"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1051:18:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Ativo_$8_storage",
+                              "typeString": "struct Actions.Ativo storage ref"
+                            }
+                          },
+                          "id": 71,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "vendivel",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 7,
+                          "src": "1051:27:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 72,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1082:4:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "src": "1051:35:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f20617469766f206e616f20706f6465207365722076656e6469646f206f75206e616f20706f73737565206e6f6d652076616c69646f2e",
+                        "id": 74,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1088:57:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_94b379a906a4a86536a6c0b7b091bbe0aeac33a6c531882215648ffd2fae89b4",
+                          "typeString": "literal_string \"O ativo nao pode ser vendido ou nao possue nome valido.\""
+                        },
+                        "value": "O ativo nao pode ser vendido ou nao possue nome valido."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_94b379a906a4a86536a6c0b7b091bbe0aeac33a6c531882215648ffd2fae89b4",
+                          "typeString": "literal_string \"O ativo nao pode ser vendido ou nao possue nome valido.\""
+                        }
+                      ],
+                      "id": 67,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        157,
+                        158
+                      ],
+                      "referencedDeclaration": 158,
+                      "src": "1042:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 75,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1042:104:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 76,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1042:104:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 84,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 78,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 154,
+                            "src": "1166:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 79,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "value",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1166:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 80,
+                              "name": "ativos",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 12,
+                              "src": "1179:6:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+                                "typeString": "mapping(string memory => struct Actions.Ativo storage ref)"
+                              }
+                            },
+                            "id": 82,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 81,
+                              "name": "_nomeAtivo",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 64,
+                              "src": "1186:10:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_string_memory_ptr",
+                                "typeString": "string memory"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1179:18:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Ativo_$8_storage",
+                              "typeString": "struct Actions.Ativo storage ref"
+                            }
+                          },
+                          "id": 83,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "valor",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 3,
+                          "src": "1179:24:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "1166:37:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f2076616c6f72207072656369736120736572206d61696f7220717565206f20707265636f20646f20617469766f2e",
+                        "id": 85,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1205:49:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1d8c0923193f73f10530ab622f1741cdbd27379519eef09db4749b0bc56ebabc",
+                          "typeString": "literal_string \"O valor precisa ser maior que o preco do ativo.\""
+                        },
+                        "value": "O valor precisa ser maior que o preco do ativo."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1d8c0923193f73f10530ab622f1741cdbd27379519eef09db4749b0bc56ebabc",
+                          "typeString": "literal_string \"O valor precisa ser maior que o preco do ativo.\""
+                        }
+                      ],
+                      "id": 77,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        157,
+                        158
+                      ],
+                      "referencedDeclaration": 158,
+                      "src": "1157:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 86,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1157:98:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 87,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1157:98:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 94,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 88,
+                          "name": "ativos",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12,
+                          "src": "1266:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+                            "typeString": "mapping(string memory => struct Actions.Ativo storage ref)"
+                          }
+                        },
+                        "id": 90,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 89,
+                          "name": "_nomeAtivo",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 64,
+                          "src": "1273:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1266:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Ativo_$8_storage",
+                          "typeString": "struct Actions.Ativo storage ref"
+                        }
+                      },
+                      "id": 91,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "valor",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3,
+                      "src": "1266:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 92,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 154,
+                        "src": "1293:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 93,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "value",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1293:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1266:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 95,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1266:36:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 102,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 96,
+                          "name": "ativos",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12,
+                          "src": "1313:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Ativo_$8_storage_$",
+                            "typeString": "mapping(string memory => struct Actions.Ativo storage ref)"
+                          }
+                        },
+                        "id": 98,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 97,
+                          "name": "_nomeAtivo",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 64,
+                          "src": "1320:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1313:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Ativo_$8_storage",
+                          "typeString": "struct Actions.Ativo storage ref"
+                        }
+                      },
+                      "id": 99,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "dono",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5,
+                      "src": "1313:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 100,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 154,
+                        "src": "1339:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 101,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1339:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1313:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 103,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1313:36:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 105,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "comprar",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 65,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64,
+                  "name": "_nomeAtivo",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 105,
+                  "src": "990:24:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 63,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "990:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "989:26:0"
+            },
+            "returnParameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1031:0:0"
+            },
+            "scope": 106,
+            "src": "972:385:0",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 107,
+        "src": "322:1040:0"
+      }
+    ],
+    "src": "0:1362:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/D/IFB/IF investimentos/contracts/Actions.sol",
+      "exportedSymbols": {
+        "Actions": [
+          106
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:33:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            106
+          ],
+          "name": "Actions",
+          "scope": 107
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Actions.Ativo",
+              "name": "Ativo",
+              "scope": 106,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "valor",
+                  "scope": 8,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 2,
+                    "name": "ElementaryTypeName",
+                    "src": "376:7:0"
+                  }
+                ],
+                "id": 3,
+                "name": "VariableDeclaration",
+                "src": "376:13:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "dono",
+                  "scope": 8,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 4,
+                    "name": "ElementaryTypeName",
+                    "src": "400:7:0"
+                  }
+                ],
+                "id": 5,
+                "name": "VariableDeclaration",
+                "src": "400:12:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "vendivel",
+                  "scope": 8,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 6,
+                    "name": "ElementaryTypeName",
+                    "src": "423:4:0"
+                  }
+                ],
+                "id": 7,
+                "name": "VariableDeclaration",
+                "src": "423:13:0"
+              }
+            ],
+            "id": 8,
+            "name": "StructDefinition",
+            "src": "352:92:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ativos",
+              "scope": 106,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(string => struct Actions.Ativo)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(string => struct Actions.Ativo)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 9,
+                    "name": "ElementaryTypeName",
+                    "src": "465:6:0"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Ativo",
+                      "referencedDeclaration": 8,
+                      "type": "struct Actions.Ativo"
+                    },
+                    "id": 10,
+                    "name": "UserDefinedTypeName",
+                    "src": "475:5:0"
+                  }
+                ],
+                "id": 11,
+                "name": "Mapping",
+                "src": "456:25:0"
+              }
+            ],
+            "id": 12,
+            "name": "VariableDeclaration",
+            "src": "456:39:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "nomeAtivo",
+              "scope": 106,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string[]",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "string[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 13,
+                    "name": "ElementaryTypeName",
+                    "src": "508:6:0"
+                  }
+                ],
+                "id": 14,
+                "name": "ArrayTypeName",
+                "src": "508:9:0"
+              }
+            ],
+            "id": 15,
+            "name": "VariableDeclaration",
+            "src": "508:27:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setAtivos",
+              "scope": 106,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_valor",
+                      "scope": 53,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 16,
+                        "name": "ElementaryTypeName",
+                        "src": "567:7:0"
+                      }
+                    ],
+                    "id": 17,
+                    "name": "VariableDeclaration",
+                    "src": "567:14:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_vendivel",
+                      "scope": 53,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 18,
+                        "name": "ElementaryTypeName",
+                        "src": "583:4:0"
+                      }
+                    ],
+                    "id": 19,
+                    "name": "VariableDeclaration",
+                    "src": "583:14:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_nomeAtivo",
+                      "scope": 53,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 20,
+                        "name": "ElementaryTypeName",
+                        "src": "599:6:0"
+                      }
+                    ],
+                    "id": 21,
+                    "name": "VariableDeclaration",
+                    "src": "599:24:0"
+                  }
+                ],
+                "id": 22,
+                "name": "ParameterList",
+                "src": "566:58:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 23,
+                "name": "ParameterList",
+                "src": "632:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (string storage ref) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 15,
+                                  "type": "string storage ref[] storage ref",
+                                  "value": "nomeAtivo"
+                                },
+                                "id": 24,
+                                "name": "Identifier",
+                                "src": "653:9:0"
+                              }
+                            ],
+                            "id": 26,
+                            "name": "MemberAccess",
+                            "src": "653:14:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 21,
+                              "type": "string memory",
+                              "value": "_nomeAtivo"
+                            },
+                            "id": 27,
+                            "name": "Identifier",
+                            "src": "668:10:0"
+                          }
+                        ],
+                        "id": 28,
+                        "name": "FunctionCall",
+                        "src": "653:26:0"
+                      }
+                    ],
+                    "id": 29,
+                    "name": "ExpressionStatement",
+                    "src": "653:26:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "valor",
+                              "referencedDeclaration": 3,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct Actions.Ativo storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 12,
+                                      "type": "mapping(string memory => struct Actions.Ativo storage ref)",
+                                      "value": "ativos"
+                                    },
+                                    "id": 30,
+                                    "name": "Identifier",
+                                    "src": "690:6:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 21,
+                                      "type": "string memory",
+                                      "value": "_nomeAtivo"
+                                    },
+                                    "id": 31,
+                                    "name": "Identifier",
+                                    "src": "697:10:0"
+                                  }
+                                ],
+                                "id": 32,
+                                "name": "IndexAccess",
+                                "src": "690:18:0"
+                              }
+                            ],
+                            "id": 33,
+                            "name": "MemberAccess",
+                            "src": "690:24:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 17,
+                              "type": "uint256",
+                              "value": "_valor"
+                            },
+                            "id": 34,
+                            "name": "Identifier",
+                            "src": "717:6:0"
+                          }
+                        ],
+                        "id": 35,
+                        "name": "Assignment",
+                        "src": "690:33:0"
+                      }
+                    ],
+                    "id": 36,
+                    "name": "ExpressionStatement",
+                    "src": "690:33:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "vendivel",
+                              "referencedDeclaration": 7,
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct Actions.Ativo storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 12,
+                                      "type": "mapping(string memory => struct Actions.Ativo storage ref)",
+                                      "value": "ativos"
+                                    },
+                                    "id": 37,
+                                    "name": "Identifier",
+                                    "src": "734:6:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 21,
+                                      "type": "string memory",
+                                      "value": "_nomeAtivo"
+                                    },
+                                    "id": 38,
+                                    "name": "Identifier",
+                                    "src": "741:10:0"
+                                  }
+                                ],
+                                "id": 39,
+                                "name": "IndexAccess",
+                                "src": "734:18:0"
+                              }
+                            ],
+                            "id": 40,
+                            "name": "MemberAccess",
+                            "src": "734:27:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 19,
+                              "type": "bool",
+                              "value": "_vendivel"
+                            },
+                            "id": 41,
+                            "name": "Identifier",
+                            "src": "764:9:0"
+                          }
+                        ],
+                        "id": 42,
+                        "name": "Assignment",
+                        "src": "734:39:0"
+                      }
+                    ],
+                    "id": 43,
+                    "name": "ExpressionStatement",
+                    "src": "734:39:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "dono",
+                              "referencedDeclaration": 5,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct Actions.Ativo storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 12,
+                                      "type": "mapping(string memory => struct Actions.Ativo storage ref)",
+                                      "value": "ativos"
+                                    },
+                                    "id": 44,
+                                    "name": "Identifier",
+                                    "src": "784:6:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 21,
+                                      "type": "string memory",
+                                      "value": "_nomeAtivo"
+                                    },
+                                    "id": 45,
+                                    "name": "Identifier",
+                                    "src": "791:10:0"
+                                  }
+                                ],
+                                "id": 46,
+                                "name": "IndexAccess",
+                                "src": "784:18:0"
+                              }
+                            ],
+                            "id": 47,
+                            "name": "MemberAccess",
+                            "src": "784:23:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 154,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 48,
+                                "name": "Identifier",
+                                "src": "810:3:0"
+                              }
+                            ],
+                            "id": 49,
+                            "name": "MemberAccess",
+                            "src": "810:10:0"
+                          }
+                        ],
+                        "id": 50,
+                        "name": "Assignment",
+                        "src": "784:36:0"
+                      }
+                    ],
+                    "id": 51,
+                    "name": "ExpressionStatement",
+                    "src": "784:36:0"
+                  }
+                ],
+                "id": 52,
+                "name": "Block",
+                "src": "632:202:0"
+              }
+            ],
+            "id": 53,
+            "name": "FunctionDefinition",
+            "src": "548:286:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getAtivos",
+              "scope": 106,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 54,
+                "name": "ParameterList",
+                "src": "865:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "nomesAtivo",
+                      "scope": 62,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "string[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "string",
+                              "type": "string"
+                            },
+                            "id": 55,
+                            "name": "ElementaryTypeName",
+                            "src": "891:6:0"
+                          }
+                        ],
+                        "id": 56,
+                        "name": "ArrayTypeName",
+                        "src": "891:8:0"
+                      }
+                    ],
+                    "id": 57,
+                    "name": "VariableDeclaration",
+                    "src": "891:26:0"
+                  }
+                ],
+                "id": 58,
+                "name": "ParameterList",
+                "src": "890:28:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 58
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 15,
+                          "type": "string storage ref[] storage ref",
+                          "value": "nomeAtivo"
+                        },
+                        "id": 59,
+                        "name": "Identifier",
+                        "src": "937:9:0"
+                      }
+                    ],
+                    "id": 60,
+                    "name": "Return",
+                    "src": "930:16:0"
+                  }
+                ],
+                "id": 61,
+                "name": "Block",
+                "src": "919:35:0"
+              }
+            ],
+            "id": 62,
+            "name": "FunctionDefinition",
+            "src": "846:108:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "comprar",
+              "scope": 106,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_nomeAtivo",
+                      "scope": 105,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 63,
+                        "name": "ElementaryTypeName",
+                        "src": "990:6:0"
+                      }
+                    ],
+                    "id": 64,
+                    "name": "VariableDeclaration",
+                    "src": "990:24:0"
+                  }
+                ],
+                "id": 65,
+                "name": "ParameterList",
+                "src": "989:26:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 66,
+                "name": "ParameterList",
+                "src": "1031:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_94b379a906a4a86536a6c0b7b091bbe0aeac33a6c531882215648ffd2fae89b4",
+                                  "typeString": "literal_string \"O ativo nao pode ser vendido ou nao possue nome valido.\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                157,
+                                158
+                              ],
+                              "referencedDeclaration": 158,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 67,
+                            "name": "Identifier",
+                            "src": "1042:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "vendivel",
+                                  "referencedDeclaration": 7,
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "type": "struct Actions.Ativo storage ref"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 12,
+                                          "type": "mapping(string memory => struct Actions.Ativo storage ref)",
+                                          "value": "ativos"
+                                        },
+                                        "id": 68,
+                                        "name": "Identifier",
+                                        "src": "1051:6:0"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 64,
+                                          "type": "string memory",
+                                          "value": "_nomeAtivo"
+                                        },
+                                        "id": 69,
+                                        "name": "Identifier",
+                                        "src": "1058:10:0"
+                                      }
+                                    ],
+                                    "id": 70,
+                                    "name": "IndexAccess",
+                                    "src": "1051:18:0"
+                                  }
+                                ],
+                                "id": 71,
+                                "name": "MemberAccess",
+                                "src": "1051:27:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "74727565",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "bool",
+                                  "type": "bool",
+                                  "value": "true"
+                                },
+                                "id": 72,
+                                "name": "Literal",
+                                "src": "1082:4:0"
+                              }
+                            ],
+                            "id": 73,
+                            "name": "BinaryOperation",
+                            "src": "1051:35:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "4f20617469766f206e616f20706f6465207365722076656e6469646f206f75206e616f20706f73737565206e6f6d652076616c69646f2e",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"O ativo nao pode ser vendido ou nao possue nome valido.\"",
+                              "value": "O ativo nao pode ser vendido ou nao possue nome valido."
+                            },
+                            "id": 74,
+                            "name": "Literal",
+                            "src": "1088:57:0"
+                          }
+                        ],
+                        "id": 75,
+                        "name": "FunctionCall",
+                        "src": "1042:104:0"
+                      }
+                    ],
+                    "id": 76,
+                    "name": "ExpressionStatement",
+                    "src": "1042:104:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_1d8c0923193f73f10530ab622f1741cdbd27379519eef09db4749b0bc56ebabc",
+                                  "typeString": "literal_string \"O valor precisa ser maior que o preco do ativo.\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                157,
+                                158
+                              ],
+                              "referencedDeclaration": 158,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 77,
+                            "name": "Identifier",
+                            "src": "1157:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": ">=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "value",
+                                  "referencedDeclaration": null,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 154,
+                                      "type": "msg",
+                                      "value": "msg"
+                                    },
+                                    "id": 78,
+                                    "name": "Identifier",
+                                    "src": "1166:3:0"
+                                  }
+                                ],
+                                "id": 79,
+                                "name": "MemberAccess",
+                                "src": "1166:9:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "valor",
+                                  "referencedDeclaration": 3,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "type": "struct Actions.Ativo storage ref"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 12,
+                                          "type": "mapping(string memory => struct Actions.Ativo storage ref)",
+                                          "value": "ativos"
+                                        },
+                                        "id": 80,
+                                        "name": "Identifier",
+                                        "src": "1179:6:0"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 64,
+                                          "type": "string memory",
+                                          "value": "_nomeAtivo"
+                                        },
+                                        "id": 81,
+                                        "name": "Identifier",
+                                        "src": "1186:10:0"
+                                      }
+                                    ],
+                                    "id": 82,
+                                    "name": "IndexAccess",
+                                    "src": "1179:18:0"
+                                  }
+                                ],
+                                "id": 83,
+                                "name": "MemberAccess",
+                                "src": "1179:24:0"
+                              }
+                            ],
+                            "id": 84,
+                            "name": "BinaryOperation",
+                            "src": "1166:37:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "4f2076616c6f72207072656369736120736572206d61696f7220717565206f20707265636f20646f20617469766f2e",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"O valor precisa ser maior que o preco do ativo.\"",
+                              "value": "O valor precisa ser maior que o preco do ativo."
+                            },
+                            "id": 85,
+                            "name": "Literal",
+                            "src": "1205:49:0"
+                          }
+                        ],
+                        "id": 86,
+                        "name": "FunctionCall",
+                        "src": "1157:98:0"
+                      }
+                    ],
+                    "id": 87,
+                    "name": "ExpressionStatement",
+                    "src": "1157:98:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "valor",
+                              "referencedDeclaration": 3,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct Actions.Ativo storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 12,
+                                      "type": "mapping(string memory => struct Actions.Ativo storage ref)",
+                                      "value": "ativos"
+                                    },
+                                    "id": 88,
+                                    "name": "Identifier",
+                                    "src": "1266:6:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 64,
+                                      "type": "string memory",
+                                      "value": "_nomeAtivo"
+                                    },
+                                    "id": 89,
+                                    "name": "Identifier",
+                                    "src": "1273:10:0"
+                                  }
+                                ],
+                                "id": 90,
+                                "name": "IndexAccess",
+                                "src": "1266:18:0"
+                              }
+                            ],
+                            "id": 91,
+                            "name": "MemberAccess",
+                            "src": "1266:24:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "value",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 154,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 92,
+                                "name": "Identifier",
+                                "src": "1293:3:0"
+                              }
+                            ],
+                            "id": 93,
+                            "name": "MemberAccess",
+                            "src": "1293:9:0"
+                          }
+                        ],
+                        "id": 94,
+                        "name": "Assignment",
+                        "src": "1266:36:0"
+                      }
+                    ],
+                    "id": 95,
+                    "name": "ExpressionStatement",
+                    "src": "1266:36:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "dono",
+                              "referencedDeclaration": 5,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct Actions.Ativo storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 12,
+                                      "type": "mapping(string memory => struct Actions.Ativo storage ref)",
+                                      "value": "ativos"
+                                    },
+                                    "id": 96,
+                                    "name": "Identifier",
+                                    "src": "1313:6:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 64,
+                                      "type": "string memory",
+                                      "value": "_nomeAtivo"
+                                    },
+                                    "id": 97,
+                                    "name": "Identifier",
+                                    "src": "1320:10:0"
+                                  }
+                                ],
+                                "id": 98,
+                                "name": "IndexAccess",
+                                "src": "1313:18:0"
+                              }
+                            ],
+                            "id": 99,
+                            "name": "MemberAccess",
+                            "src": "1313:23:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 154,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 100,
+                                "name": "Identifier",
+                                "src": "1339:3:0"
+                              }
+                            ],
+                            "id": 101,
+                            "name": "MemberAccess",
+                            "src": "1339:10:0"
+                          }
+                        ],
+                        "id": 102,
+                        "name": "Assignment",
+                        "src": "1313:36:0"
+                      }
+                    ],
+                    "id": 103,
+                    "name": "ExpressionStatement",
+                    "src": "1313:36:0"
+                  }
+                ],
+                "id": 104,
+                "name": "Block",
+                "src": "1031:326:0"
+              }
+            ],
+            "id": 105,
+            "name": "FunctionDefinition",
+            "src": "972:385:0"
+          }
+        ],
+        "id": 106,
+        "name": "ContractDefinition",
+        "src": "322:1040:0"
+      }
+    ],
+    "id": 107,
+    "name": "SourceUnit",
+    "src": "0:1362:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xb9895Dc6c543361570A0A594aE7adF08b95d7eA2",
+      "transactionHash": "0xdfd8a42872f6ab9a549b9f2ce62db557370b768e9019b392508d36468c4b5b20"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-03T13:38:35.576Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
