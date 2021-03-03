@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>IF-investimentos | Mercado</title>
+    <link rel="icon" type="image/png" href="./favicon.png"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/global.css">
+  </head>
+  <body>
+      <div class="hero">
+        <img src="./images/logo-small.svg" alt="Logo">
+        <strong>IF investimentos</strong>
+      </div>
+
+      <div class="navBar">
+        <a href="./home.html">Lista de ações</a>
+        <a href="./minhas-acoes.html" class="notActivePage">Minhas ações</a>
+      </div>
+
+      <div id="titlesGrid">
+      </div>
+
+      <div id="titleTemplate" style="display: none;">
+        <div class="titleTemplate">
+          <div class="header">
+            <strong class="titleName">ITSA4</strong>
+          </div>
+  
+          <div class="body">
+            <span class="titlePrice">ETH 20</span>
+            <span>Dono atual</span>
+            <span class="titleOwner">ac558...hgd5</span>
+          </div>
+  
+          <button type="button" data-id="0" data-price="0">Comprar</button>
+        </div>
+      </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

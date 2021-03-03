@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.hero {
+  display: flex;
+}
+
+.hero strong{
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color:  rgba(91, 75, 139, 0.85);
+  align-self: flex-start;
+  margin-top: 1.5rem;
+}
+
+.navBar {
+  background-color: #987DE8;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navBar a {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.navBar .notActivePage {
+  color: rgba(125, 125, 125, 0.7);
+  transition: color 0.5s;
+}
+
+.navBar .notActivePage:hover {
+  color: #fff;
+}
+
+#titlesGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+}
+
+.titleTemplate {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #987DE8;
+  border-radius: 5px;
+  color: #fff;
+  padding: 2rem;
+  font-size: 1.8rem;
+}
+
+.titleTemplate .header {
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  padding: 1rem;
+  margin: 0 2.5rem;
+}
+
+.titleTemplate .header strong {
+  font-weight: 500;
+}
+
+.titleTemplate .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 3rem;
+  margin-top: 2rem;
+}
+
+
+.titleTemplate button {
+  background-color: #5B4B8B;
+  border: 0;
+  padding: 1rem;
+  width: 80%;
+  margin: 2rem auto 0;
+  border-radius: 5px;
+}
