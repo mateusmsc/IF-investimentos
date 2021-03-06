@@ -57,7 +57,7 @@ nav .notActivePage:hover {
   background: var(--cor-destaque);
 }
 
-#titlesGrid {
+#titlesGrid, #productsGrid {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
