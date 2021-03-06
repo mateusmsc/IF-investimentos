@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root{
+  --cor-primaria: #987DE8;
+  --cor-destaque: #5B4B8B;
+  --cor-detalhe-acao:white;
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
 }
@@ -45,6 +51,10 @@ nav .notActivePage {
 
 nav .notActivePage:hover {
   color: #fff;
+}
+
+.back-cor-destaque{
+  background: var(--cor-destaque);
 }
 
 #titlesGrid {
@@ -95,4 +105,31 @@ nav .notActivePage:hover {
   width: 80%;
   margin: 2rem auto 0;
   border-radius: 5px;
+}
+
+#container{
+  margin: 115px auto;
+}
+
+#container .product{
+  background: var(--cor-primaria);
+  padding:25px 40px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size:20px;
+  line-height: 34px;
+  color:var(--cor-detalhe-acao);
+}
+
+#container .product header{
+  border-bottom: 1px solid var(--cor-detalhe-acao);
+  display:block;
+  margin-bottom:25px;
+  font-size:20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+#container .product button{
+  font-weight: bold;
+  margin-top:30px;
 }
