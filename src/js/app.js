@@ -69,11 +69,16 @@ App = {
             var owner = ativo[2];
             var isAvailable = ativo[3];
             var name = ativo[4];
-            
-            console.log(id, value, owner, isAvailable,name);
+
+            // Se o título não está ativo ele não será exibido
+            if(!isAvailable){
+              return;
+            }
+
+            console.log(id, value, owner, isAvailable, name);
             
             titleTemplate.find(".titleName").text(name);
-            titleTemplate.find(".titlePrice").text(value);
+            titleTemplate.find(".titlePrice").text(value + " ETH");
             titleTemplate.find(".titleOwner").text(App.formatAddress(owner));
             titleTemplate.find("button").attr('data-id', id);
             titleTemplate.find("button").attr('data-price', value);
@@ -84,12 +89,31 @@ App = {
       })
       .catch((error) => {
         console.log(error);
-      })
+      });
+   
+    // Adiciona o evento onClick, nos botões de compra, para
+    // ser executada a função handleBuy();
+    $(document).on('click', '.btn-buy', App.handleBuy);
   },
 
-  bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
-  },
+  handleBuy: function(event) {
+    event.preventDefault();
+
+    var titleId = parseInt($(event.target).data('id'));
+    var titlePrice = parseInt($(event.target).data('price'));
+
+    App.contracts.StockMarket.deployed()
+      .then(function(instance) {
+        stockMarketInstance = instance;
+        return stockMarketInstance.comprar(titleId, {from: App.account, value: web3.toWei(titlePrice, 'ether')});
+      })
+      .then(function(result) {
+        location.reload();
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 
 };
 

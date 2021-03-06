@@ -8,11 +8,11 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-.hero {
+header {
   display: flex;
 }
 
-.hero strong{
+header strong{
   font-family: 'Cabin', sans-serif;
   font-weight: 400;
   font-size: 2.5rem;
@@ -21,7 +21,7 @@ body {
   margin-top: 1.5rem;
 }
 
-.navBar {
+nav {
   background-color: #987DE8;
   width: 100%;
   padding: 2rem;
@@ -29,17 +29,21 @@ body {
   justify-content: space-around;
 }
 
-.navBar a {
+nav a {
   color: #fff;
   font-size: 2rem;
 }
 
-.navBar .notActivePage {
+nav a:hover {
+  color: #fff;
+}
+
+nav .notActivePage {
   color: rgba(125, 125, 125, 0.7);
   transition: color 0.5s;
 }
 
-.navBar .notActivePage:hover {
+nav .notActivePage:hover {
   color: #fff;
 }
 
