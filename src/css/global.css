@@ -133,3 +133,78 @@ nav .notActivePage:hover {
   font-weight: bold;
   margin-top:30px;
 }
+
+#home-logo{
+  position: absolute;
+  width: 281px;
+  height: 314px;
+  left: 77px;
+  top: 111px;
+}
+
+#home-name{
+  position: absolute;
+  width: 418px;
+  height: 73px;
+  left: 429px;
+  top: 151px;
+  font-family: Cabin;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 73px;
+  /* identical to box height */
+  color: rgba(91, 75, 139, 0.85);
+}
+#indexbutton{
+  position: absolute;
+  width: 409px;
+  height: 60px;
+  left: 951px;
+  top: 164px;
+  background: #5B4B8B;
+  border-radius: 5px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 29px;
+  color: #fff;
+
+}
+#indexsubtext{
+  position: absolute;
+  width: 332px;
+  height: 102px;
+  left: 429px;
+  top: 245px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 34px;
+  color: rgba(125, 125, 125, 0.7);
+}
+#rect1{
+  position: absolute;
+  width: 783px;
+  height: 29px;
+  left: 0px;
+  top: 665px;
+  background: #987DE8;
+}
+#imgindex{
+  position: absolute;
+  width: 577px;
+  height: 537px;
+  left: 783px;
+  top: 396px;
+}
+#rect2{
+  position: absolute;
+  width: 80px;
+  height: 29px;
+  left: 1360px;
+  top: 665px;
+  background: #987DE8;
+}
