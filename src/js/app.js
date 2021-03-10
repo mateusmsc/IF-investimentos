@@ -118,7 +118,6 @@ App = {
         var myAtive = result[i].c[0];//pegar id do ativo
         ativosByAccount.ativos(myAtive).then(function (ativo){
           var titleTemplate = $('#titleTemplate');
-
           id = ativo[0].c[0];
           valor = ativo[1].c[0];
           owner = ativo[2];
@@ -131,12 +130,16 @@ App = {
           if(status == true){
             titleTemplate.find(".habilitar").attr("disabled");
             titleTemplate.find(".desabilitar").attr("enabled");
+            titleTemplate.find(".habilitar").css("display","none");
+            titleTemplate.find(".desabilitar").css("display","block");
           }else{
             titleTemplate.find(".habilitar").attr("enabled");
             titleTemplate.find(".desabilitar").attr("disabled");
+            titleTemplate.find(".habilitar").css("display","block");
+            titleTemplate.find(".desabilitar").css("display","none");
           }
-          
-          $productsGrid.append(titleTemplate);
+          var nome1 = $("<div>"+nome+"</div>");
+          $productsGrid.append(titleTemplate.html());
         });
       }
     }).catch(function(err) {
