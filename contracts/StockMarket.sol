@@ -42,7 +42,7 @@ contract StockMarket {
     
     /*TODO: aparentemente solidity não permite retornar structs. Conferir isso.*/
     function getAtivosByAccount() public returns(uint[] memory) {
-        address owner = msg.sender;
+        address payable owner = msg.sender;
         
         uint ownerAtivosCount = 0; 
         
