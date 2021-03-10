@@ -25,20 +25,24 @@ contract StockMarket {
     mapping (uint => Ativo) public ativos;
     
    constructor() public{
-       createAtivo("ITSA", 20);
-       createAtivo("ITSA2", 20);
-       createAtivo("ITSA3", 20);
+       createAtivo("ITSA", 20,true);
+       createAtivo("ITSA2", 20,true);
+       createAtivo("ITSA3", 20,true);
+       createAtivo("Teste Dany", 40,true);
+       createAtivo("BBDC4", 35,true);
+       createAtivo("PETR4", 18,false);
    }
     
-    function createAtivo(string memory _nomeAtivo, uint _valor) public{
+    function createAtivo(string memory _nomeAtivo, uint _valor, bool status) public{
         ativosCount++;
         
-        ativos[ativosCount] = Ativo(ativosCount, _valor, msg.sender, true, _nomeAtivo);
+        ativos[ativosCount] = Ativo(ativosCount, _valor, msg.sender, status, _nomeAtivo);
     }
     
     
-    function getAtivosByAccount() public view returns(Ativo[] memory) {
-        address payable owner = msg.sender;
+    /*TODO: aparentemente solidity não permite retornar structs. Conferir isso.*/
+    function getAtivosByAccount() public returns(uint[] memory) {
+        address owner = msg.sender;
         
         uint ownerAtivosCount = 0; 
         
@@ -48,18 +52,20 @@ contract StockMarket {
                 ownerAtivosCount++;
             }
         }
-        
-        Ativo[] memory ownerAtivos = new Ativo[](ownerAtivosCount);
+        //Ativo[] memory ownerAtivos = new Ativo[](ownerAtivosCount);
+        uint[] memory id = new uint[](ownerAtivosCount);
         uint j = 0;
         
-        for(uint i = 0; i <= ativosCount; i++){
+        for(uint i = 0; i < ativosCount && j < ownerAtivosCount; i++){
             if(ativos[i].dono == owner){
-                ownerAtivos[j] = ativos[i];
+                id[j]= ativos[i].id;
+                //Ativo storage a = ativos[i];
+                //ownerAtivos[j] = a;
                 j++;
             }
-        }
-        
-        return ownerAtivos;
+        }  
+        //return ownerAtivos
+        return id;
     }
     
     
