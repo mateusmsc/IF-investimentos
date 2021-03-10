@@ -38,78 +38,110 @@ App = {
     return addressFormated;
   },
 
+
   render: function () {
     var stockMarketInstance;
     var titlesGrid = $('#titlesGrid');
 
-    var productsGrid = $('#productsGrid');
+    //verifica em qual página estamos antes de executar as funções da blockchain
+    if(window.location.pathname == "/minhas-acoes.html"){
+      return App.minhasAcoes();
+    }
+    else if(window.location.pathname == "/home.html"){
+      // Captura o endereço da conta conectada
+      web3.eth.getCoinbase(function (err, account) {
+        if (err === null) {
+          App.account = account;
 
-    // Captura o endereço da conta conectada
-    web3.eth.getCoinbase(function (err, account) {
-      if (err === null) {
-        App.account = account;
-
-        var connectedAccount = $("#connected-account");
-        // connectedAccount.append("Conta conectada: "+account);
-      }
-    });
-
-    App.contracts.StockMarket.deployed()
-      .then(function (instance) {
-        stockMarketInstance = instance;
-        return stockMarketInstance.ativosCount();
-      })
-      .then(function (ativosCount) {
-        console.log(ativosCount.c[0]);
-        for (let i = 1; i <= ativosCount.c[0]; i++) {
-          stockMarketInstance.ativos(i)
-            .then(function (ativo) {
-              var titleTemplate = $('#titleTemplate');
-
-              var productTemplate = $('#productTemplate');
-
-              var id = ativo[0].c[0];
-              var value = ativo[1].c[0];
-              var owner = ativo[2];
-              var isAvailable = ativo[3];
-              var name = ativo[4];
-
-              // Só exibe se o dono do titulo for o usuario ativo
-              if (owner === App.account) {
-                productTemplate.find(".titleName").text(name);
-                productTemplate.find(".titlePrice").text(value + " ETH");
-                productTemplate.find(".titleOwner").text(App.formatAddress(owner));
-                productTemplate.find("button").attr('data-id', id);
-                productTemplate.find("button").attr('data-price', value);
-
-                productsGrid.append(productTemplate.html());
-              }
-
-              // Se o título não está ativo ele não será exibido
-              if (!isAvailable) {
-                return;
-              }
-
-              console.log(id, value, owner, isAvailable, name);
-
-              titleTemplate.find(".titleName").text(name);
-              titleTemplate.find(".titlePrice").text(value + " ETH");
-              titleTemplate.find(".titleOwner").text(App.formatAddress(owner));
-              titleTemplate.find("button").attr('data-id', id);
-              titleTemplate.find("button").attr('data-price', value);
-
-              titlesGrid.append(titleTemplate.html());
-
-            })
+          var connectedAccount = $("#connected-account");
+          // connectedAccount.append("Conta conectada: "+account);
         }
-      })
-      .catch((error) => {
-        console.log(error);
       });
 
-    // Adiciona o evento onClick, nos botões de compra, para
-    // ser executada a função handleBuy();
-    $(document).on('click', '.btn-buy', App.handleBuy);
+      App.contracts.StockMarket.deployed()
+        .then(function (instance) {
+          stockMarketInstance = instance;
+          return stockMarketInstance.ativosCount();
+        })
+        .then(function (ativosCount) {
+          console.log(ativosCount.c[0]);
+          for (let i = 1; i <= ativosCount.c[0]; i++) {
+            stockMarketInstance.ativos(i)
+              .then(function (ativo) {
+                var titleTemplate = $('#titleTemplate');
+
+                var id = ativo[0].c[0];
+                var value = ativo[1].c[0];
+                var owner = ativo[2];
+                var isAvailable = ativo[3];
+                var name = ativo[4];
+
+                // Se o título não está ativo ele não será exibido
+                if (!isAvailable) {
+                  return;
+                }
+
+                console.log(id, value, owner, isAvailable, name);
+
+                titleTemplate.find(".titleName").text(name);
+                titleTemplate.find(".titlePrice").text(value + " ETH");
+                titleTemplate.find(".titleOwner").text(App.formatAddress(owner));
+                titleTemplate.find("button").attr('data-id', id);
+                titleTemplate.find("button").attr('data-price', value);
+
+                titlesGrid.append(titleTemplate.html());
+
+              })
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      // Adiciona o evento onClick, nos botões de compra, para
+      // ser executada a função handleBuy();
+      $(document).on('click', '.btn-buy', App.handleBuy);
+    }
+    
+  },
+
+
+  minhasAcoes: function(){
+    var ativosByAccount, id,valor,owner,status,name;
+    var $productsGrid = $('#productsGrid');
+
+    App.contracts.StockMarket.deployed().then(function(instance) {
+      ativosByAccount = instance;
+      return ativosByAccount.getAtivosByAccount.call();
+    }).then(function(result) {
+      for(let i=0;i<result.length;i++){
+        var myAtive = result[i].c[0];//pegar id do ativo
+        ativosByAccount.ativos(myAtive).then(function (ativo){
+          var titleTemplate = $('#titleTemplate');
+
+          id = ativo[0].c[0];
+          valor = ativo[1].c[0];
+          owner = ativo[2];
+          status = ativo[3];
+          nome = ativo[4];
+
+          titleTemplate.find(".titleName").text(nome);
+          titleTemplate.find(".titlePrice").text(valor + " ETH");
+          titleTemplate.find(".titleOwner").text(App.formatAddress(owner));
+          if(status == true){
+            titleTemplate.find(".habilitar").attr("disabled");
+            titleTemplate.find(".desabilitar").attr("enabled");
+          }else{
+            titleTemplate.find(".habilitar").attr("enabled");
+            titleTemplate.find(".desabilitar").attr("disabled");
+          }
+          
+          $productsGrid.append(titleTemplate);
+        });
+      }
+    }).catch(function(err) {
+      console.log("getAtivosByAccount:" + err.message);
+    });
   },
 
   handleBuy: function (event) {
