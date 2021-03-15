@@ -1,0 +1,74 @@
+:root{
+  --cor-primaria: #987DE8;
+  --cor-destaque: #5B4B8B;
+  --cor-detalhe-acao:white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.indexContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+h1 {
+  font-family: 'Cabin';
+  font-size: 6rem;
+  font-weight: 400;
+  color: var(--cor-primaria);
+}
+
+#home-logo {
+  width: 250px;
+  height: 250px;
+}
+
+#indexsubtext {
+  width: 70%;
+  font-size: 2.5rem;
+  font-family: Ubuntu;
+  color: rgba(125, 125, 125, 0.7);
+}
+
+.indexButton {
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-destaque);
+  color: #fff;
+  padding: 1.5rem;
+  width: 40rem;
+  border: 0;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  transition: filter 0.2s;
+}
+
+.indexButton:hover{
+  filter: brightness(0.85);
+}
+
+#imgindex{
+  height: 400px;
+}
+
+#rect1{
+  background-color: var(--cor-primaria);
+  height: 30px;
+  width: 100%;
+}
+
+#rect2 {
+  background-color: var(--cor-primaria);
+  height: 30px;
+  width: 20%;
+}

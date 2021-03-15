@@ -23,3 +23,10 @@ truffle migrate --reset
 npm run dev
 
 ```
+
+## Capturas de tela
+
+### Tela inicial
+### Home
+### Compra de ação
+### Ações do usuário

@@ -6,11 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<script src="https://kit.fontawesome.com/d5a71f49d1.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/global.css">
 	<title>IF-investimentos | Minhas Ações</title>
 </head>
-
 <body>
 
 	<header>
@@ -18,6 +16,9 @@
 			<img src="./images/logo-small.svg" alt="Logo">
 			<strong>IF investimentos</strong>
 		</a>
+		
+		<span id="connected-account">
+		</span>
 
 	</header>
 
@@ -29,7 +30,7 @@
 	<main id="productsGrid">
 	</main>
 
-	<div id="titleTemplate" style="display: none;">
+	<div id="productTemplate" style="display: none;">
 		<div class="titleTemplate">
 			<div class="header">
 				<strong class="titleName">ITSA4</strong>
@@ -40,31 +41,12 @@
 				<span>Dono atual</span>
 				<span class="titleOwner">ac558...hgd5</span>
 			</div>
-
-			<button class="btn-buy desabilitar" type="button" data-id="0" data-price="0"><i class="fas fa-store-slash"></i> Desabilitar venda</button>
-			<button class="btn-buy habilitar" type="button" data-id="0" data-price="0"><i class="fas fa-store"></i> Habilitar Venda</button>
+			
+			<button class="btn-buy change-availability" type="button" data-id="0" data-price="0">
+			</button>
 		</div>
 	</div>
 
-	<!-- <div id="container" class="minhas-acoes">
-		<div class="col-md-8 col-md-push-2">
-			<div class="row">
-				<!-TODO Tornar conteúdp de .product dinâmico via js,repetir elementos 
-				<div class="col-sm-12 col-md-4">
-					<div class="product">
-						<header>Title</header>
-						<span class="valor">R$ xx,xx</span>
-						<br>
-						<b>Proprietário</b>
-						<span class="proprietario">ac558...hgd5</span>
-						TODO em data-key tentar colocar id da ação (via js)
-						<button type="button" class="btn btn-block back-cor-destaque" data-key="">Comprar</button>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
