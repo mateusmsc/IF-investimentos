@@ -27,6 +27,22 @@ npm run dev
 ## Capturas de tela
 
 ### Tela inicial
+<p align="center">
+  <img alt="Screen capture" src=".gh-assets/tela-inicial.PNG" />
+</p>
+
 ### Home
+<p align="center">
+  <img alt="Screen capture" src=".gh-assets/home.PNG" />
+</p>
+
 ### Compra de ação
+<p align="center">
+  <img alt="Screen capture" src=".gh-assets/compra-de-acao.PNG" />
+</p>
+
 ### Ações do usuário
+
+<p align="center">
+  <img alt="Screen capture" src=".gh-assets/acoes-do-usuario.PNG" />
+</p>
